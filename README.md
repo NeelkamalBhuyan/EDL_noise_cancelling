@@ -3,6 +3,8 @@
 
 Refer to complete problem statement [here](https://moodle.iitb.ac.in/mod/folder/view.php?id=40879) or [here](https://github.com/NeelkamalBhuyan/EDL_noise_cancelling/blob/main/EE344%20assignment.pdf).
 
+Data can be accessed [here](https://github.com/NeelkamalBhuyan/EDL_noise_cancelling/blob/main/EE344%20assignment.pdf).
+
 Created by:
 * Aadesh Anil Madnaik - 180020001
 * Amitrajit Bhattacharjee - 180020014
