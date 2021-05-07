@@ -1,5 +1,5 @@
 # EE 344 - Electronics Design Lab
-## The aim is to design a compensator circuit for analog noise cancellation of headphones.
+## The aim is to design an analog compensator circuit for noise cancellation of headphones.
 
 Refer to complete problem statement [here](https://moodle.iitb.ac.in/mod/folder/view.php?id=40879) or [here](https://github.com/NeelkamalBhuyan/EDL_noise_cancelling/blob/main/EE344%20assignment.pdf).
 
