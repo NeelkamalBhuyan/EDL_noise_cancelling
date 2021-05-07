@@ -23,13 +23,13 @@ CL_noise_mag = 20*log10(abs(closed_tf_noise));
 CL_music_mag = 20*log10(abs(closed_tf_v));
 
 figure;
-subplot(2,1,1);
+
 semilogx(freqs/(2*pi), CL_noise_mag)
 yline(0);
 title('CL noise mag');
 xlabel("Frequency (Hz)");
 ylabel("Magnitude (dB)");
-subplot(2,1,2); 
+figure;
 semilogx(freqs/(2*pi), CL_music_mag)
 yline(0);
 xlabel("Frequency (Hz)");
@@ -38,13 +38,13 @@ title('CL music mag');
 
 function val = C(w)
     % band reject filter params
-    Q1 = 0.05;
-    Q2 = 1; 
+    Q1 = 0.01;
+    Q2 = 0.06; 
     
     lag1 = ((5/50)*(w+5000)./(w+500)).^2;
     % for pushing gain cross-over freq to left while not affecting phase
     % cross over freq
-    band_reject = (5*(w.^2 + w*100*2*pi*Q2 + (100*2*pi)^2)./(w.^2 + w*100*2*pi*Q1 +(100*2*pi)^2));
+    band_reject = (1*(w.^2 + w*100*2*pi*Q2 + (100*2*pi)^2)./(w.^2 + w*100*2*pi*Q1 +(100*2*pi)^2));
     % band reject filter at 100 Hz, C is Q2/Q1 at 100Hz
     lag2 = (((50/100)*(w+100*2*pi)./(w+50*2*pi)).^2);
     % Lag compensator needs to be used to push down
@@ -55,6 +55,6 @@ function val = C(w)
     % phase plot by the lag compensator can be placed in this region
     % without affecting phase cross-over freq at 1400 Hz
     
-    val = lag2.*band_reject.*lag1;
+    val = 10*lag2.*band_reject.*lag1;
                                                             % 
 end
