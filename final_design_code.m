@@ -38,8 +38,8 @@ title('CL music mag');
 
 function val = C(w)
     % band reject filter params
-    Q1 = 0.01;
-    Q2 = 0.06; 
+    Q1 = 0.1;
+    Q2 = 0.6; 
     
     lag1 = ((5/50)*(w+5000)./(w+500)).^2;
     % for pushing gain cross-over freq to left while not affecting phase
